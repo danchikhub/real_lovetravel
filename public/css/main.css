@@ -1,0 +1,77 @@
+.header-section{
+    background-image: url(img/back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px 0 14px 0;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.header a{
+    text-decoration: none;
+    color: #2d2d2d;
+    font-size: 20px;
+    font-weight: bold;
+}
+.header a:hover{
+    color: #fff;
+}
+
+.desc-web{
+    text-align: center;
+    margin-top: 80px;
+}
+
+.love{
+    color:#a01212;
+    font-style: italic;
+}
+
+.travel{
+    color:#fff;
+}
+
+.desc-web h1{
+    font-size: 80px;
+
+}
+.desc-web p{
+    width: 40%;
+    margin: 0 auto;
+    color:#292a2a;
+    font-size: 17px;
+}
+.city{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 180px;
+    margin-bottom: 120px;
+}
+
+.city span{
+    color: #000;
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.chose-city{
+    margin: 7px;
+}
+
+.btn-find-city{
+    color: black;
+    background-color: #595959;
+    border: black 1px solid;
+}
+.cities{
+    border-radius: 3px;
+    border:1px #000 solid;
+    width: 130px;
+    height: 35px;
+    text-align: center;
+}
