@@ -42,6 +42,6 @@ class CityController extends Controller
         if (count ( $city ) > 0)
             return view ( 'index' )->withDetails ( $city )->withQuery ( $q );
         else
-            return view ( 'index' )->withMessage ( 'No Details found. Try to search again !' );
+            return view ( 'index' )->withMessage ( 'Город не найден' );
        }
 }

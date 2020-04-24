@@ -50,7 +50,10 @@
                         </tr>
 
                     </table>
+                    @elseif(isset($message))
+			        <p class="error">{{ $message }}</p>
                 </div>
+               
                  @endif
         
     </div>
