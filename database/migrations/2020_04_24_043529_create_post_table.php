@@ -17,6 +17,7 @@ class CreatePostTable extends Migration
             $table->bigIncrements('id_post');//ID поста
             $table->string('zag_post');//Заголовок поста
             $table->string('opis_post');//Описание поста
+            $table->int('ejo');
             $table->string('img_post');//Картинки поста
             $table->timestamps();
         });
