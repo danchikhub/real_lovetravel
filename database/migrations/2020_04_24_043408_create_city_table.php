@@ -16,9 +16,9 @@ class CreateCityTable extends Migration
         Schema::create('city', function (Blueprint $table) {
             $table->bigIncrements('id_city');//Id города
             $table->string('name_city');//Название города
-            $table->string('opis_city');//Описание города
-            $table->string('img_city');//Картинка города
-            $table->integer('ejo');// Еда Жилье Отдых (1-еда 2-жилье 3-отдых)
+            $table->string('opis_city')->nullbale();//Описание города
+            $table->string('img_city')->nullbale();//Картинка города
+            // $table->integer('ejo')->nullbale();// Еда Жилье Отдых (1-еда 2-жилье 3-отдых)
             $table->timestamps();
         });
     }

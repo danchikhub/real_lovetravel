@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\City;
+use Illuminate\Support\Facades\Input;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +24,17 @@ Route::get('/index', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/city-add', function () {
+    return view('city-add');
+})->name('city-add');
+Route::post('/city-add/city-form', 'CityController@submitcity')->name('city-form');
+Route::post('/index/search', 'CityController@search')->name('city-search');
+// Route::any ( '/index/search', function () {
+//     $q = Input::get ( 'q' );
+//     $city = City::where ( 'name_city', 'LIKE', '%' . $q . '%' )->get ();
+//     if (count ( $city ) > 0)
+//         return view ( 'index' )->withDetails ( $city )->withQuery ( $q );
+//     else
+//         return view ( 'index' )->withMessage ( 'No Details found. Try to search again !' );
+// } );

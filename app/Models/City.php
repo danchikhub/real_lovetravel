@@ -3,9 +3,22 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 class City extends Model
 {
-    protected $primaryKey = 'id_city';
+    use Notifiable;
+    public $table="city";
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name_city',
+    ];
+    // protected $primaryKey = 'id_city';
+    // protected $city='name_city';
 }
 

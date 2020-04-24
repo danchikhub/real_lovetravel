@@ -75,3 +75,20 @@
     height: 35px;
     text-align: center;
 }
+
+.div{
+    /* display: flex;
+    justify-content: center; */
+    margin:0 auto;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.div p{
+    font-size: 23px;
+    font-style: italic;
+}
+.div table{
+    margin:0 auto;
+    font-size: 28px;
+}

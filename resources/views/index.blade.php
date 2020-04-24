@@ -20,19 +20,38 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati ad sapiente aspernatur eligendi placeat praesentium eaque quo perspiciatis sed perferendis.</p>
             </div>
             <div class="city">
-                <div class="chose-city">
-                    <span >Выберите город:</span>
-                            <select class="cities" id="state" required="">
-                                <option value="">Choose</option>
-                                <option>California</option>
-                            </select>
-                </div>
-                <form class="form-inline mt-2 mt-md-0">
+                <!-- <form class="form-inline mt-2 mt-md-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="Поиск города" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0 btn-find-city" type="submit">Поиск</button>
+                </form> -->
+                <form action="{{route('city-search')}}" method="POST" role="search">
+                    {{ csrf_field() }}
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="q"
+                            placeholder="Search users"> <span class="input-group-btn">
+                            <button type="submit" class="btn btn-outline-success my-2 my-sm-0 btn-find-city">
+                                Поиск
+                            </button>
+                        </span>
+                    </div>
                 </form>
             </div>
-        </div>
+            @if(isset($details))
+        
+                <div class="div">
+                    <p> Результат по вашему поиску <b> {{ $query }} </b> :</p>
+                    <table class="city-table">
+
+                        <tr>
+                            <th>Город:</th>
+                            @foreach($details as $city)
+                            <th><a class="find-link" href="">{{$city->name_city}}</a></th>
+                            @endforeach
+                        </tr>
+
+                    </table>
+                </div>
+                 @endif
         
     </div>
 </body>
