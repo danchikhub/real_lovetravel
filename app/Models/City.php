@@ -16,7 +16,7 @@ class City extends Model
      * @var array
      */
     protected $fillable = [
-        'name_city',
+        'id_city','name_city','opis_city','img_city',
     ];
     // protected $primaryKey = 'id_city';
     // protected $city='name_city';

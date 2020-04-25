@@ -19,12 +19,13 @@ Route::get('/', function () {
 Route::get('/index', function () {
     return view('index');
 });
+Route::get('/city-show/{id_city}','CityController@cityShow');
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+// Route::get('/index/{$id_city}', 'CityController@cityShow')->name('showCity');
 Route::get('/city-add', function () {
     return view('city-add');
 })->name('city-add');

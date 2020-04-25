@@ -38,10 +38,33 @@ class CityController extends Controller
 
        public function search(Request $request){
         $q = Input::get ( 'q' );
-        $city = City::where ( 'name_city', 'LIKE', '%' . $q . '%' )->get ();
+        
+    // if($q!=NULL){
+    //     $city = City::where ( 'name_city', 'LIKE', '%' . $q . '%')->get ();
+    //     if (count ( $city ) > 0)
+    //         return view ( 'index' )->withDetails ( $city )->withQuery ( $q );
+    //     else
+    //         return view ( 'index' )->withMessage ( 'Город не найден' );
+    //     }else{
+    //         return view ( 'index' )->withMessage ( 'Город не найден' );}
+    // }
+    if ($q!=NULL) {
+        $city = City::where ( 'name_city', 'LIKE', '%' . $q . '%')->get ();
         if (count ( $city ) > 0)
             return view ( 'index' )->withDetails ( $city )->withQuery ( $q );
         else
             return view ( 'index' )->withMessage ( 'Город не найден' );
-       }
+    }else{
+        return view ( 'index' )->withMessage ( 'Введите что нибудь' );}
+    }
+
+    public function cityShow($id_city){
+        $city=new City();
+        $result=$city->find($id_city);
+       
+        $tmp = json_decode($result->img_city, true);    // using a temp variable for testing
+        $result->img_city=$tmp;
+        
+        return view('city-test',['data'=>$result]);
+    }
 }
