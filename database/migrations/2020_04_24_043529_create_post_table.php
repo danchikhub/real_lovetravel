@@ -19,6 +19,7 @@ class CreatePostTable extends Migration
             $table->string('opis_post');//Описание поста
             $table->integer('ejo');
             $table->string('img_post');//Картинки поста
+            $table->integer('id_city');//Айди Города
             $table->timestamps();
         });
     }
