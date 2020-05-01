@@ -20,6 +20,13 @@ Route::get('/index', function () {
     return view('index');
 });
 
+Route::get('/maps', function () {
+    return view('maps');
+});
+
+Route::get('/placemark', function () {
+    return view('placemark');
+});
 
 Auth::routes();
 

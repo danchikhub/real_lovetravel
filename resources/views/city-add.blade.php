@@ -13,6 +13,8 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+
+
     <title>Добавить город</title>
 </head>
 <body>
@@ -31,6 +33,16 @@
             <div class="form-group">
                 <label for="opis_city">Описание города</label>
                 <input type="text" name="opis_city" placeholder="Введите описание города" id="opis_city" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="longitude">Долгота</label>
+                <input type="text" name="longitude" placeholder="Введите долготу" id="longitude" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="latitude">Широта</label>
+                <input type="text" name="latitude" placeholder="Введите долготу" id="latitude" class="form-control">
             </div>
 
             <div class="input-group control-group increment" >
@@ -62,6 +74,8 @@
       });
     });
 </script>
+
+<center><iframe src="http://dimik.github.io/ymaps/examples/location-tool/" width="100%" height="600" scrolling="auto"> </iframe></center>
 
 </body>
 </html>

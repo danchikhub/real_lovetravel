@@ -16,21 +16,23 @@ class CityController extends Controller
         $city=new City();
         $city->name_city=$request->input('name_city');
         $city->opis_city=$request->input('opis_city');
+        $city->longitude=$request->input('longitude');
+        $city->latitude=$request->input('latitude');
         $this->validate($request, [
             'img_city' => 'required',
             'img_city.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
     ]);
-    
+
     if($request->hasfile('img_city'))
     {
         foreach($request->file('img_city') as $image)
         {
             $name=$image->getClientOriginalName();
             $image->move(public_path().'/image/', $name);  // your folder path
-            $data[] = $name;  
+            $data[] = $name;
         }
     }
-    
+
     $city->img_city = json_encode($data);
         $city->save();
         return redirect()->route('city-add')->with('success','Город был добавлен');
