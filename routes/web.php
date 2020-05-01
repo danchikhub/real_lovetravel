@@ -12,6 +12,7 @@
 */
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Route::get('/', function () {
     return view('welcome');
 });
@@ -24,11 +25,22 @@ Route::get('/', 'PostController@index');
 Route::resource('posts','PostController');
 
 >>>>>>> Stashed changes
+=======
+Route::get('/', 'PostController@index');
+Route::resource('posts','PostController');
+
+>>>>>>> Stashed changes
 Route::get('/index', function () {
     return view('index');
 });
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+Route::get('/posts', function () {
+    return view('posts');
+});
+>>>>>>> Stashed changes
 =======
 Route::get('/posts', function () {
     return view('posts');
