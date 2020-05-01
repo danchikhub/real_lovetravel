@@ -45,7 +45,7 @@
                         <tr>
                             <th>Город:</th>
                             @foreach($details as $city)
-                            <th><a class="find-link" href="">{{$city->name_city}}</a></th>
+                            <th><a class="find-link" href="{{route('showCity',$city->id_city)}}">{{$city->name_city}}</a></th>
                             @endforeach
                         </tr>
 

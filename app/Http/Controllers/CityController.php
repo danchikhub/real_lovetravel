@@ -16,22 +16,23 @@ class CityController extends Controller
         $city=new City();
         $city->name_city=$request->input('name_city');
         $city->opis_city=$request->input('opis_city');
-        $this->validate($request, [
-            'img_city' => 'required',
-            'img_city.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
-    ]);
+        $city->img_city=$request->input('img_city');
+    //     $this->validate($request, [
+    //         'img_city' => 'required',
+    //         'img_city.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
+    // ]);
     
-    if($request->hasfile('img_city'))
-    {
-        foreach($request->file('img_city') as $image)
-        {
-            $name=$image->getClientOriginalName();
-            $image->move(public_path().'/image/', $name);  // your folder path
-            $data[] = $name;  
-        }
-    }
+    // if($request->hasfile('img_city'))
+    // {
+    //     foreach($request->file('img_city') as $image)
+    //     {
+    //         $name=$image->getClientOriginalName();
+    //         $image->move(public_path().'/image/', $name);  // your folder path
+    //         $data[] = $name;  
+    //     }
+    // }
     
-    $city->img_city = json_encode($data);
+    // $city->img_city = json_encode($data);
         $city->save();
         return redirect()->route('city-add')->with('success','Город был добавлен');
        }
@@ -58,13 +59,22 @@ class CityController extends Controller
         return view ( 'index' )->withMessage ( 'Введите что нибудь' );}
     }
 
+    // public function cityShow(){
+    //     $city=new City();
+    //     $result=$city->find($id_city);
+       
+    //     $tmp = json_decode($result->img_city, true);    // using a temp variable for testing
+    //     $result->img_city=$tmp;
+        
+    //     return view('city-test',['data'=>$city->all()]);
+    // }
     public function cityShow($id_city){
         $city=new City();
-        $result=$city->find($id_city);
+        // $result=$city->find($id_city);
        
-        $tmp = json_decode($result->img_city, true);    // using a temp variable for testing
-        $result->img_city=$tmp;
+        // $tmp = json_decode($result->img_city, true);    // using a temp variable for testing
+        // $result->img_city=$tmp;
         
-        return view('city-test',['data'=>$result]);
+        return view('city-test',['data'=>$city->find($id_city)]);
     }
 }

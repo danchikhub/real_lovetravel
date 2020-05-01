@@ -7,7 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-<h1> {{$data->name_city}}</h1>
-
+@foreach($data as $el)
+<h1> {{$el->name_city}}</h1>
+<p>{{$el->opis_city}}</p>
+@endforeach
 </body>
 </html>

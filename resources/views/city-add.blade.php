@@ -33,7 +33,12 @@
                 <input type="text" name="opis_city" placeholder="Введите описание города" id="opis_city" class="form-control">
             </div>
 
-            <div class="input-group control-group increment" >
+            <div class="form-group">
+                <label for="img_city">Описание города</label>
+                <input type="text" name="img_city" placeholder="Введите текст" id="img_city" class="form-control">
+            </div>
+
+            <!-- <div class="input-group control-group increment" >
                 <input type="file" name="img_city[]" class="form-control">
                 <div class="input-group-btn">
                     <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Add</button>
@@ -46,12 +51,12 @@
                 <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
                 </div>
             </div>
-            </div>
+            </div> -->
 
             <button type="submit" class="btn btn-success">Отправить</button>
         </form>
     </div>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
     $(document).ready(function() {
       $(".btn-success").click(function(){
           var html = $(".clone").html();
@@ -61,7 +66,7 @@
           $(this).parents(".control-group").remove();
       });
     });
-</script>
+</script> -->
 
 </body>
 </html>
