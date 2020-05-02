@@ -9,8 +9,8 @@
     -->
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<73ad5942-49f9-45bb-a3c1-f90e7b540bdb>" type="text/javascript"></script>
 
-   <script>
-       ymaps.ready(init);
+<script type="text/javascript">
+    ymaps.ready(init);
 
 function init() {
     var myMap = new ymaps.Map("map", {
@@ -67,6 +67,7 @@ function init() {
             iconPieChartCaptionMaxWidth: 200
         });
 
+
     myMap.geoObjects
         .add(myGeoObject)
         .add(myPieChart)
@@ -120,7 +121,7 @@ function init() {
         }));
 }
 
-   </script>
+</script>
 
 	<style>
         html, body, #map {
