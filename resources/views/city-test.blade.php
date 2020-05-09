@@ -12,6 +12,9 @@
 <div class="city-div pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h1 class="name-city display-4"> {{$data->name_city}}</h1>
     <p class="desc-city lead">{{$data->opis_city}}</p>
+    @foreach($data->img_city as $image)
+        <img src="{{ asset('/image/'.$image) }}" style="height:120px; width:200px"/>
+        @endforeach
 </div>
 
 
