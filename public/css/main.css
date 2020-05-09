@@ -102,3 +102,11 @@
     font-weight: bold;
     margin-top: -40px;
 }
+
+/* Стили для отображения городов */
+
+.city-div{
+    margin: 0 auto;
+    text-align: center;
+    background-color: #000;
+}
