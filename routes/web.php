@@ -20,13 +20,22 @@ Route::get('/index', function () {
     return view('index');
 });
 
+//тестовая для метки яндекс карты
 Route::get('/maps', function () {
     return view('maps');
 });
 
+//тестовая для метки яндекс карты
 Route::get('/placemark', function () {
-    return view('placemark');
+	$city_placemark = DB::table('city')->get();
+    return view('placemark', compact('city_placemark'));
 });
+//страница отображения всех мест
+Route::get('/allcities', function () {
+	$cities = DB::table('city')->get();
+    return view('allcities', compact('cities'));
+});
+
 
 Auth::routes();
 

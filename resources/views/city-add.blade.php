@@ -45,6 +45,11 @@
                 <input type="text" name="latitude" placeholder="Введите долготу" id="latitude" class="form-control">
             </div>
 
+            <div class="form-group">
+                <label for="map_scale">Машстаб карты</label>
+                <input type="text" name="map_scale" placeholder="Введите масштаб карты" id="map_scale" class="form-control">
+            </div>
+
             <div class="input-group control-group increment" >
                 <input type="file" name="img_city[]" class="form-control">
                 <div class="input-group-btn">

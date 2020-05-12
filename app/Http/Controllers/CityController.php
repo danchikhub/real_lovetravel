@@ -18,6 +18,7 @@ class CityController extends Controller
         $city->opis_city=$request->input('opis_city');
         $city->longitude=$request->input('longitude');
         $city->latitude=$request->input('latitude');
+        $city->map_scale=$request->input('map_scale');
         $this->validate($request, [
             'img_city' => 'required',
             'img_city.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
