@@ -19,7 +19,7 @@ class Post extends Model
      * @var array
      */
     protected $fillable = [
-       'zag_post','opis_post','ejo','img_post','id_city',
+       'zag_post','opis_post','ejo','img_post','id_city','longitude', 'latitude', 'map_scale'
     ];
 
 }

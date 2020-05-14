@@ -17,7 +17,7 @@
 </head>
 <body>
     <div class="container">
-        
+
 
         <form action="{{ route('post-form') }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -33,10 +33,6 @@
                 <input type="text" name="opis_post" placeholder="Введите описание города" id="opis_post" class="form-control">
             </div>
 
-            <!-- <div class="form-group">
-                <label for="opis_post">Описание поста</label>
-                <input type="text" name="opis_post" placeholder="Введите описание города" id="opis_post" class="form-control">
-            </div> -->
             <select name="ejo" id="" class="form-control">
                 <option value="1">Еда</option>
                 <option value="2">Жилье</option>
@@ -48,19 +44,32 @@
 	            @endforeach
 	        </select>
 
-            
+            <div class="form-group">
+                <label for="longitude">Долгота</label>
+                <input type="text" name="longitude" placeholder="Введите долготу" id="longitude" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="latitude">Широта</label>
+                <input type="text" name="latitude" placeholder="Введите долготу" id="latitude" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="map_scale">Машстаб карты</label>
+                <input type="text" name="map_scale" placeholder="Введите масштаб карты" id="map_scale" class="form-control">
+            </div>
 
             <div class="input-group control-group increment" >
                 <input type="file" name="img_post[]" class="form-control">
                 <div class="input-group-btn">
-                    <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Add</button>
+                    <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Добавить</button>
                 </div>
             </div>
             <div class="clone hide">
             <div class="control-group input-group" style="margin-top:10px">
                 <input type="file" name="img_post[]" class="form-control">
                 <div class="input-group-btn">
-                <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
+                <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> Удалить</button>
                 </div>
             </div>
             </div>
@@ -68,6 +77,9 @@
             <button type="submit" class="btn btn-success">Отправить</button>
         </form>
     </div>
+
+    <center><iframe src="http://dimik.github.io/ymaps/examples/location-tool/" width="100%" height="600" scrolling="auto"> </iframe></center>
+
     <script type="text/javascript">
     $(document).ready(function() {
       $(".btn-success").click(function(){

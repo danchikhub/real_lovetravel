@@ -22,17 +22,17 @@ class CityController extends Controller
             'img_city' => 'required',
             'img_city.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
     ]);
-    
+
     if($request->hasfile('img_city'))
     {
         foreach($request->file('img_city') as $image)
         {
             $name=$image->getClientOriginalName();
             $image->move(public_path().'/image/', $name);  // your folder path
-            $data[] = $name;  
+            $data[] = $name;
         }
     }
-    
+
     $city->img_city = json_encode($data);
         $city->save();
         return redirect()->route('city-add')->with('success','Город был добавлен');
@@ -40,7 +40,7 @@ class CityController extends Controller
 
        public function search(Request $request){
         $q = Input::get ( 'q' );
-        
+
             if ($q!=NULL) {
                 $city = City::where ( 'name_city', 'LIKE', '%' . $q . '%')->get ();
                 if (count ( $city ) > 0)
@@ -54,16 +54,16 @@ class CityController extends Controller
     // public function cityShow(){
     //     $city=new City();
     //     $result=$city->find($id_city);
-       
+
     //     $tmp = json_decode($result->img_city, true);    // using a temp variable for testing
     //     $result->img_city=$tmp;
-        
+
     //     return view('city-test',['data'=>$city->all()]);
     // }
     public function cityShow($id_city){
         $city=new City();
         // $result=$city->find($id_city);
-       
+
         // $tmp = json_decode($result->img_city, true);    // using a temp variable for testing
         // $result->img_city=$tmp;
       $result=$city->find($id_city);
@@ -91,7 +91,7 @@ class CityController extends Controller
 
     public function allcity(){
         $city=new City;
-  
+
         return view('allcities',['data'=>$city->all()]);
      }
 
@@ -116,7 +116,7 @@ class CityController extends Controller
      }
 
      public function updateCitySubmit($id_city,Request $request){
-       
+
         $city=City::find($id_city);
         $city->name_city=$request->input('name_city');
         $city->opis_city=$request->input('opis_city');
@@ -125,17 +125,17 @@ class CityController extends Controller
             'img_city' => 'required',
             'img_city.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
     ]);
-    
+
     if($request->hasfile('img_city'))
     {
         foreach($request->file('img_city') as $image)
         {
             $name=$image->getClientOriginalName();
             $image->move(public_path().'/image/', $name);  // your folder path
-            $data[] = $name;  
+            $data[] = $name;
         }
     }
-    
+
     $city->img_city = json_encode($data);
         return redirect()->route('city-data', $id_city)->with('success','Город  был обновлен');
        }

@@ -22,31 +22,35 @@ class PostController extends Controller
         $post->opis_post=$request->input('opis_post');
         // $post->ejo=$request->input('opis_post');
         $post->ejo=$request['ejo'];
+        $post->longitude=$request->input('longitude');
+        $post->latitude=$request->input('latitude');
+        $post->map_scale=$request->input('map_scale');
         $post->id_city=$request['id_city'];
         $post->img_post=$request->input('img_post');
+
         $this->validate($request, [
             'img_post' => 'required',
             'img_post.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
     ]);
-    
+
     if($request->hasfile('img_post'))
     {
         foreach($request->file('img_post') as $image)
         {
             $name=$image->getClientOriginalName();
             $image->move(public_path().'/image/', $name);  // your folder path
-            $data[] = $name;  
+            $data[] = $name;
         }
     }
 
         $post->img_post = json_encode($data);
         $post->save();
         return redirect('/post-add')->with('success','Город был добавлен');
-    
+
     }
     public function allData(){
         $post=new Post;
-  
+
         return view('all-posts',['data'=>$post->all()]);
      }
     // public function index()
@@ -93,14 +97,14 @@ class PostController extends Controller
             'img_post' => 'required',
             'img_post.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
     ]);
-    
+
     if($request->hasfile('img_post'))
     {
         foreach($request->file('img_post') as $image)
         {
             $name=$image->getClientOriginalName();
             $image->move(public_path().'/image/', $name);  // your folder path
-            $data[] = $name;  
+            $data[] = $name;
         }
     }
 
@@ -112,5 +116,17 @@ class PostController extends Controller
        public function deletePost($id_post){
         Post::find($id_post)->delete();
         return redirect()->route('post-data')->with('success','Пост был удален');
+}
+
+       public function postPlacemark($id_post){
+       $post=Post::find($id_post);
+
+       $longitude = $post->longitude;
+       $latitude = $post->latitude;
+       $map_scale = $post->map_scale;
+       $zag_post = $post->zag_post;
+       // return view('placemark', $post);
+
+        return view('placemark', ['longitude' => $longitude, 'latitude' => $latitude, 'map_scale' => $map_scale, 'zag_post' => $zag_post]);
     }
 }
