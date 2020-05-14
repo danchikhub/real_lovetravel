@@ -9,18 +9,15 @@
     <link rel="stylesheet" href="{{URL::asset('css\main.css')}}">
 </head>
 <body>
-<div class="container">
-<h1>Посты пользователей</h1>
-@foreach($data as $el)
-    <div class="alert alert-info">
-        <h3>{{ $el->name_city }}</h1>
-        <p> <small>{{ $el->opis_city}}</small> </p>
-        <p>{{$el->created_at}}</p>
-        <a href="{{route('city-data-one',$el->id_city)}}"><button class="btn btn-warning">Редактировать</button></a>
-    </div>
-@endforeach
-</div>
+<div class="city-div pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="name-city display-4"> {{$data->name_city}}</h1>
+    <p class="desc-city lead">{{$data->opis_city}}</p>
+    @foreach($data->img_city as $image)
+        <img src="{{ asset('/image/'.$image) }}" style="height:120px; width:200px"/>
+    @endforeach
 
+    
+</div>
 
 
 </body>

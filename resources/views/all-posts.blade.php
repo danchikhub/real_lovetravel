@@ -13,10 +13,10 @@
 <h1>Посты пользователей</h1>
 @foreach($data as $el)
     <div class="alert alert-info">
-        <h3>{{ $el->name_city }}</h1>
-        <p> <small>{{ $el->opis_city}}</small> </p>
+        <h3>{{ $el->zag_post }}</h1>
+        <p> <small>{{ $el->opis_post}}</small> </p>
         <p>{{$el->created_at}}</p>
-        <a href="{{route('city-data-one',$el->id_city)}}"><button class="btn btn-warning">Редактировать</button></a>
+        <a href="{{route('post-data-one',$el->id_post)}}"><button class="btn btn-warning">Подробнее</button></a>
     </div>
 @endforeach
 </div>

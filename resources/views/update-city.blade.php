@@ -53,7 +53,7 @@
             </div>
             </div>
 
-            <button type="submit" class="btn btn-success">Отправить</button>
+            <button type="submit" class="btn btn-success">Обновить</button>
         </form>
     </div>
     <script type="text/javascript">

@@ -13,7 +13,12 @@
         <div class="container">
             <div class="header">
                 <a href="/index" class="logo">LoveTravel</a>
-                <a href="{{ url('/') }}/login" class="come-in">Войти</a>
+                @if(Auth::user())
+                         <a href="{{ url('/') }}/login" class="come-in">{{ Auth::user()->name }}</a>
+                             @else
+                            <a href="{{ url('/') }}/login" class="come-in">Войти</a>
+                 @endif
+                <!-- <a href="{{ url('/') }}/login" class="come-in">Войти</a> -->
             </div>
             <div class="desc-web">
                 <h1><span class="love">Love</span><span class="travel">Travel</span></h1>
@@ -45,7 +50,7 @@
                         <tr>
                             <th>Город:</th>
                             @foreach($details as $city)
-                            <th><a class="find-link" href="">{{$city->name_city}}</a></th>
+                            <th><a class="find-link" href="{{route('showCity',$city->id_city)}}">{{$city->name_city}}</a></th>
                             @endforeach
                         </tr>
 
