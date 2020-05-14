@@ -22,7 +22,7 @@
             </div>
             <div class="desc-web">
                 <h1><span class="love">Love</span><span class="travel">Travel</span></h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati ad sapiente aspernatur eligendi placeat praesentium eaque quo perspiciatis sed perferendis.</p>
+                <p>Путешествовать — значит развиваться.</p>
             </div>
             <div class="city">
                 <!-- <form class="form-inline mt-2 mt-md-0">
