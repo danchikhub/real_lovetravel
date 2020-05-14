@@ -9,7 +9,6 @@
         <p> <small>{{ $city->opis_city}}</small> </p>
         <p>{{$city->created_at}}</p>
         <a href="placemark"><button class="btn">Отображение на карте</button></a></a>
-
     </div>
 @endforeach
 

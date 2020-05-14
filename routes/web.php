@@ -26,16 +26,16 @@ Route::get('/maps', function () {
 });
 
 //тестовая для метки яндекс карты
-Route::get('/placemark', function () {
+Route::get('/placemark', function ($id) {
 	$city_placemark = DB::table('city')->get();
     return view('placemark', compact('city_placemark'));
 });
+
 //страница отображения всех мест
 Route::get('/allcities', function () {
 	$cities = DB::table('city')->get();
     return view('allcities', compact('cities'));
 });
-
 
 Auth::routes();
 
