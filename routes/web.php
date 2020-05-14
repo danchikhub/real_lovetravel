@@ -32,11 +32,18 @@ Route::get('/city-add', function () {
 })->name('city-add');
 Route::post('/city-add/city-form', 'CityController@submitcity')->name('city-form');
 Route::post('/index/search', 'CityController@search')->name('city-search');
-// Route::any ( '/index/search', function () {
-//     $q = Input::get ( 'q' );
-//     $city = City::where ( 'name_city', 'LIKE', '%' . $q . '%' )->get ();
-//     if (count ( $city ) > 0)
-//         return view ( 'index' )->withDetails ( $city )->withQuery ( $q );
-//     else
-//         return view ( 'index' )->withMessage ( 'No Details found. Try to search again !' );
-// } );
+Route::get('/all-cities', 'CityController@allcity')->name('city-data');
+Route::get('/all-cities/{id_city}/update', 'CityController@updateCity')->name('city-update');
+Route::post('/all-cities/{id_city}/update', 'CityController@updateCitySubmit')->name('city-update-submit');
+Route::get('/all-cities/{id_city}', 'CityController@OneCity')->name('city-data-one');
+Route::get('/all-cities/{id_city}/delete', 'CityController@deleteCity')->name('city-delete');
+
+
+Route::get('/post-add', 'PostController@create');
+Route::post('/city-add/post-form', 'PostController@submitpost')->name('post-form');
+Route::get('/city-test', 'PostController@index');
+Route::get('/all-posts', 'PostController@allData')->name('post-data');
+Route::get('/all-posts/{id_post}', 'PostController@showOnePost')->name('post-data-one');
+Route::get('/all-posts/{id_post}/update', 'PostController@updatePost')->name('post-update');
+Route::post('/all-posts/{id_post}/update', 'PostController@updatePostSubmit')->name('post-update-submit');
+Route::get('/all-posts/{id_post}/delete', 'PostController@deletePost')->name('post-delete');
