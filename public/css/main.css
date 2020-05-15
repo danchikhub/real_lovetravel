@@ -1,8 +1,8 @@
 .header-section{
-    background-image: url(img/back.jpg);
+    background-image: url("img/main.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 20px 0 14px 0;
+    padding: 60px;
 }
 
 .header{
@@ -28,7 +28,6 @@
 
 .love{
     color:#a01212;
-    font-style: italic;
 }
 
 .travel{
