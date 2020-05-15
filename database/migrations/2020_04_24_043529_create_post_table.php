@@ -20,6 +20,9 @@ class CreatePostTable extends Migration
             $table->integer('ejo');
             $table->string('img_post');//Картинки поста
             $table->integer('id_city');//Айди Города
+            $table->decimal('longitude', 11, 8);
+            $table->decimal('latitude',11,8);
+            $table->integer('map_scale');
             $table->timestamps();
         });
     }
