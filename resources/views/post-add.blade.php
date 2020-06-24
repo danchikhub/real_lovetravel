@@ -32,12 +32,13 @@
                 <label for="opis_post">Описание поста</label>
                 <input type="text" name="opis_post" placeholder="Введите описание города" id="opis_post" class="form-control">
             </div>
-
+            <label for="ejo">Категории</label>
             <select name="ejo" id="" class="form-control">
                 <option value="1">Еда</option>
                 <option value="2">Жилье</option>
                 <option value="3">Отдых</option>
             </select>
+            <label for="id_city">Город</label>
             <select name="id_city" class="form-control">
 	            @foreach ($city_name as $city)
 	                <option value="{{ $city->id_city }}">{{ $city->name_city }}</option>
