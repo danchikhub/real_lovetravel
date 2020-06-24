@@ -15,7 +15,10 @@
     @foreach($data->img_city as $image)
         <img src="{{ asset('/image/'.$image) }}" style="height:120px; width:200px"/>
     @endforeach
-
+    <br>
+    <br>
+    <br>
+    <a href="{{route('post-data')}}"><button class="btn btn-primary">Просмотр постов</button></a> </br> </br>
     
 </div>
 

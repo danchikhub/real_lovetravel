@@ -14,7 +14,11 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                   Вы зашли! Добро пожаловать 
+                    <br>
+    <br>
+    <br>
+    <a href="{{route('index')}}"><button class="btn btn-primary">Перейти на главную</button></a> </br> </br>
                 </div>
             </div>
         </div>
