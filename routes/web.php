@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 Route::get('/index', function () {
     return view('index');
-});
+})->name('index');
 // Route::get('/city-show/{id_city}','CityController@cityShow');
 
 //тестовая для метки яндекс карты
