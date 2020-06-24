@@ -19,6 +19,12 @@
         <a href="{{route('post-data-one',$el->id_post)}}"><button class="btn btn-warning">Подробнее</button></a>
     </div>
 @endforeach
+
+<br>
+<br>
+
+<a href="{{route('post-add')}}"><button class="btn btn-primary">Добавить пост</button></a> </br> </br>
+<a href="{{route('city-add')}}"><button class="btn btn-primary">Если нет вашего города</button></a> </br> </br>
 </div>
 
 

@@ -55,7 +55,7 @@ Route::get('/all-cities/{id_city}', 'CityController@OneCity')->name('city-data-o
 Route::get('/all-cities/{id_city}/delete', 'CityController@deleteCity')->name('city-delete');
 
 
-Route::get('/post-add', 'PostController@create');
+Route::get('/post-add', 'PostController@create')->name('post-add');
 Route::post('/city-add/post-form', 'PostController@submitpost')->name('post-form');
 Route::get('/city-test', 'PostController@index');
 Route::get('/all-posts', 'PostController@allData')->name('post-data');
